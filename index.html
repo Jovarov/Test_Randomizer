@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Redirecting…</title>
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+  </head>
+  <body>
+    <noscript>This page needs JavaScript to redirect.</noscript>
+
+    <script>
+      // ✅ Put your 4 test links here:
+      const tests = [
+        "https://toets-app-v2.netlify.app/take_mixed.html?code=VLHJ576P",
+        "https://toets-app-v2.netlify.app/take_writing.html?code=FLQF8W6W",
+        "https://toets-app-v2.netlify.app/take_writing.html?code=5PAYQ8U8",
+        "https://toets-app-v2.netlify.app/take_writing.html?code=5PAYQ8U8"
+      ];
+
+      // Optional: stable per-student (same device gets same test)
+      // Comment out this block if you want purely random every time.
+      const KEY = "assignedTest";
+      let chosen = localStorage.getItem(KEY);
+
+      if (!chosen) {
+        chosen = tests[Math.floor(Math.random() * tests.length)];
+        localStorage.setItem(KEY, chosen);
+      }
+
+      // Instant redirect
+      location.replace(chosen);
+    </script>
+  </body>
+</html>
