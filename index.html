@@ -12,17 +12,16 @@
     <noscript>This page needs JavaScript to redirect.</noscript>
 
     <script>
-      // ✅ Put your 4 test links here:
+      // Put your 4 test links here:
       const tests = [
-        "https://oceanwells.com/",
         "https://www.wikipedia.org/",
+        "https://www.hln.be/",
         "https://www.vrt.be/vrtnws/nl/",
-        "https://www.hln.be/"
+        "https://www.standaard.be/"
       ];
 
-        const chosen = tests[Math.floor(Math.random() * tests.length)];
-        location.replace(chosen)    // Instant redirect
-  
+      const chosen = tests[Math.floor(Math.random() * tests.length)];
+      location.replace(chosen); // instant redirect, doesn't add history entry
     </script>
   </body>
 </html>
