@@ -20,18 +20,9 @@
         "https://www.hln.be/"
       ];
 
-      // Optional: stable per-student (same device gets same test)
-      // Comment out this block if you want purely random every time.
-      const KEY = "assignedTest";
-      let chosen = localStorage.getItem(KEY);
-
-      if (!chosen) {
-        chosen = tests[Math.floor(Math.random() * tests.length)];
-        localStorage.setItem(KEY, chosen);
-      }
-
-      // Instant redirect
-      location.replace(chosen);
+        const chosen = tests[Math.floor(Math.random() * tests.length)];
+        location.replace(chosen)    // Instant redirect
+  
     </script>
   </body>
 </html>
